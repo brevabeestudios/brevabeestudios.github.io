@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brevabee Studios — Bolt to Home</title>
+<meta name="description" content="Brevabee Studios builds polished casual mobile games. Our debut title Bolt to Home is launching on Google Play and the App Store.">
+<meta property="og:title" content="Bolt to Home — Brevabee Studios">
+<meta property="og:description" content="A bite-sized sliding-puzzle mobile game. Rotate pipes, beat the clock, bring the bolt home.">
+<meta name="theme-color" content="#0A0F2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0a0f2e;--bg-2:#13183d;
+    --cyan:#00e5ff;--cyan-soft:#7af0ff;
+    --gold:#ffc107;--magenta:#ff00aa;
+    --text:#f4f6ff;--muted:#9aa3c7;
+    --border:rgba(122,240,255,.18);
+  }
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;
+    background-image:
+      radial-gradient(900px 600px at 80% -10%,rgba(0,229,255,.18),transparent 60%),
+      radial-gradient(700px 500px at 0% 30%,rgba(255,0,170,.10),transparent 60%);
+    background-attachment:fixed;
+  }
+  a{color:var(--cyan);text-decoration:none;transition:color .15s}
+  a:hover{color:var(--cyan-soft)}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-size:14px}
+  nav .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.5px;font-size:18px}
+  nav ul{display:flex;gap:28px;list-style:none}
+  nav a{color:var(--muted)}
+  nav a:hover{color:var(--text)}
+  .hero{padding:64px 0 96px;text-align:center;position:relative}
+  .hero-badge{
+    display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--cyan);border:1px solid var(--border);
+    padding:6px 14px;border-radius:999px;margin-bottom:24px;
+  }
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(40px,7vw,80px);font-weight:700;line-height:1.05;letter-spacing:-.02em;
+    background:linear-gradient(90deg,#fff 0%,var(--cyan) 60%,var(--gold) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:16px;
+  }
+  .tagline{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:580px;margin:0 auto 36px}
+  .cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:48px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:13px 22px;border-radius:12px;font-weight:600;font-size:15px;
+    transition:transform .15s,box-shadow .15s,background .15s;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--cyan) 0%,#1e90ff 100%);color:#001028;box-shadow:0 0 24px rgba(0,229,255,.35)}
+  .btn-primary:hover{color:#001028;transform:translateY(-1px);box-shadow:0 0 32px rgba(0,229,255,.55)}
+  .btn-ghost{border:1px solid var(--border);color:var(--text);background:rgba(255,255,255,.03)}
+  .btn-ghost:hover{color:var(--text);border-color:var(--cyan);background:rgba(0,229,255,.08)}
+  .device-stage{position:relative;height:280px;display:flex;justify-content:center;align-items:center;margin-top:8px}
+  .ring{
+    width:240px;height:240px;border-radius:50%;
+    border:6px dashed var(--cyan);
+    box-shadow:0 0 50px rgba(0,229,255,.45),inset 0 0 30px rgba(0,229,255,.2);
+    animation:spin 18s linear infinite;
+    display:flex;justify-content:center;align-items:center;
+  }
+  .ring-inner{
+    width:188px;height:188px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#1a2150 0%,#0a0f2e 70%);
+    display:flex;justify-content:center;align-items:center;
+    animation:counter-spin 18s linear infinite;
+  }
+  .bolt{width:90px;height:auto;filter:drop-shadow(0 0 12px rgba(255,193,7,.6))}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes counter-spin{to{transform:rotate(-360deg)}}
+  section{padding:80px 0;position:relative}
+  section h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(28px,4vw,42px);font-weight:700;letter-spacing:-.01em;margin-bottom:16px;text-align:center;
+  }
+  section .sub{text-align:center;color:var(--muted);max-width:600px;margin:0 auto 56px}
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .feature{
+    background:linear-gradient(180deg,rgba(255,255,255,.04) 0%,rgba(255,255,255,.01) 100%);
+    border:1px solid var(--border);border-radius:16px;padding:28px;
+    transition:transform .2s,border-color .2s,box-shadow .2s;
+  }
+  .feature:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 6px 28px rgba(0,229,255,.12)}
+  .feature .icon{
+    font-size:28px;display:inline-flex;align-items:center;justify-content:center;
+    width:48px;height:48px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(0,229,255,.18),rgba(255,193,7,.12));
+    margin-bottom:16px;
+  }
+  .feature h3{font-size:18px;margin-bottom:8px;font-weight:700}
+  .feature p{color:var(--muted);font-size:14.5px;line-height:1.6}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;text-align:center}
+  .step{padding:28px 16px}
+  .step .num{
+    display:inline-flex;width:42px;height:42px;border-radius:50%;
+    background:linear-gradient(135deg,var(--cyan),var(--gold));
+    color:#001028;font-weight:800;font-size:18px;
+    align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .step h4{font-size:16px;font-weight:700;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:14px}
+  footer{padding:48px 0 32px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:14px}
+  footer .links{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:18px}
+  footer .copy{font-size:13px}
+  @media (max-width:560px){
+    nav ul{gap:18px;font-size:13px}
+    .device-stage{height:240px}
+    .ring{width:200px;height:200px}
+    .ring-inner{width:152px;height:152px}
+    .bolt{width:74px}
+  }
+</style>
+</head>
+<body>
+
+<header class="container">
+  <nav>
+    <span class="brand">⚡ Brevabee Studios</span>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How to play</a></li>
+      <li><a href="https://brevabeestudios.github.io/bolttohome-privacy/">Privacy</a></li>
+      <li><a href="mailto:brevabeestudios@gmail.com">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero container">
+    <span class="hero-badge">Now launching</span>
+    <h1>Bolt to Home</h1>
+    <p class="tagline">Rotate the pipes. Connect the path. Bring the bolt home before the timer hits zero. 200 hand-crafted puzzles, neon visuals that evolve as you progress, and zero account needed.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#download">Get the game</a>
+      <a class="btn btn-ghost" href="#features">See features</a>
+    </div>
+    <div class="device-stage" aria-hidden="true">
+      <div class="ring">
+        <div class="ring-inner">
+          <svg class="bolt" viewBox="0 0 64 96" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 0 L0 56 L24 56 L18 96 L60 36 L36 36 Z" fill="#FFC107"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <h2>What's inside</h2>
+      <p class="sub">A focused puzzle experience designed to be picked up in seconds and replayed for stars.</p>
+      <div class="features">
+        <div class="feature"><span class="icon">🧩</span><h3>200 levels</h3><p>Progressive grid sizes from 3×3 up to 8×10, with shuffle aggressiveness scaled per band so the difficulty never plateaus.</p></div>
+        <div class="feature"><span class="icon">⚡</span><h3>Power-ups</h3><p>Clear Box removes blockers; the 4-Way Tile upgrades any cell into a super-connector. Use them sparingly — every star counts.</p></div>
+        <div class="feature"><span class="icon">⏱️</span><h3>Beat the clock</h3><p>Each puzzle has a tight timer with smart color escalation as it approaches zero. Run out of time? Earn gems for a +60s continue.</p></div>
+        <div class="feature"><span class="icon">💎</span><h3>Gem economy</h3><p>Earn gems for every level cleared, every star, every clean run. Spend them on power-ups whenever the level demands it.</p></div>
+        <div class="feature"><span class="icon">🎨</span><h3>Evolving palette</h3><p>Five tier-based color schemes that change as you progress — cyan, neon pink, emerald, inferno, and cosmic violet. Your milestone, your look.</p></div>
+        <div class="feature"><span class="icon">📶</span><h3>Plays offline</h3><p>Every level, every gem, every star works offline. Ads are a bonus when connected — never a blocker when you're not.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="container">
+      <h2>How to play</h2>
+      <p class="sub">No tutorials, no jargon. Just three steps from menu to victory.</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h4>Pick a level</h4><p>Pick the next level on the title screen, or revisit any cleared level for a 3-star run.</p></div>
+        <div class="step"><div class="num">2</div><h4>Rotate the pipes</h4><p>Tap a tile to rotate it 90°. Build a clean, connected path from the bolt to every home on the board.</p></div>
+        <div class="step"><div class="num">3</div><h4>Bring it home</h4><p>Beat the timer to clear the level. Earn gems, climb the high score, unlock the next puzzle.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="container" style="text-align:center">
+      <h2>Coming soon</h2>
+      <p class="sub">Bolt to Home is in final pre-launch testing. Store links go live once the rollout begins.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:8px">
+        <a class="btn btn-ghost" href="#" aria-disabled="true" style="opacity:.6;cursor:default">Google Play (soon)</a>
+        <a class="btn btn-ghost" href="#" aria-disabled="true" style="opacity:.6;cursor:default">App Store (soon)</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="links">
+      <a href="https://brevabeestudios.github.io/bolttohome-privacy/">Privacy Policy</a>
+      <a href="mailto:brevabeestudios@gmail.com">brevabeestudios@gmail.com</a>
+      <a href="https://github.com/brevabeestudios">GitHub</a>
+    </div>
+    <p class="copy">© 2026 Brevabee Studios. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
