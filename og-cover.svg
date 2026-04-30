@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f2e"/>
+      <stop offset="100%" stop-color="#1a2150"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="80%" cy="0%" r="50%">
+      <stop offset="0%" stop-color="rgba(0,229,255,.35)"/>
+      <stop offset="100%" stop-color="rgba(0,229,255,0)"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0%" cy="100%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,0,170,.20)"/>
+      <stop offset="100%" stop-color="rgba(255,0,170,0)"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#FFC107"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <g transform="translate(820 315)">
+    <circle r="180" fill="none" stroke="#00E5FF" stroke-width="14" stroke-dasharray="36 24" opacity="0.85"/>
+    <circle r="140" fill="#0a0f2e"/>
+    <path d="M30 -110 L-50 30 L-15 30 L-32 110 L50 -30 L10 -30 Z" fill="#FFC107" transform="scale(1.2)"/>
+  </g>
+  <text x="80" y="240" font-family="'Space Grotesk', system-ui, sans-serif" font-size="100" font-weight="700" fill="url(#title)" letter-spacing="-2">Bolt to Home</text>
+  <text x="80" y="300" font-family="'Inter', system-ui, sans-serif" font-size="32" fill="#9aa3c7">200 puzzles. Beat the clock. Bring the bolt home.</text>
+  <text x="80" y="540" font-family="'Inter', system-ui, sans-serif" font-size="22" font-weight="600" fill="#FFC107">⚡ Brevabee Studios</text>
+</svg>
