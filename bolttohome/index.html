@@ -7,7 +7,7 @@
 <meta name="description" content="Bolt to Home — a neon sliding-puzzle game by Brevabee Studios. Screenshots, how to play, downloads, and player support. Rotate the pipes, beat the timer, bring the bolt home.">
 <meta name="keywords" content="Bolt to Home, Brevabee Studios, support, puzzle game, sliding puzzle, mobile game, help, contact">
 <meta name="author" content="Brevabee Studios">
-<meta name="theme-color" content="#0A0F2E">
+<meta name="theme-color" content="#080808">
 <link rel="canonical" href="https://brevabeestudios.github.io/bolttohome/">
 
 <meta property="og:type" content="website">
@@ -25,9 +25,9 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
-    --bg:#0a0f2e;--bg-2:#13183d;
+    --bg:#080808;--bg-2:#0f0f14;
     --cyan:#00e5ff;--cyan-soft:#7af0ff;
-    --gold:#ffc107;--magenta:#ff00aa;--lime:#76ff03;
+    --gold:#ffc107;--orange:#ff7a1a;--magenta:#ff00aa;--lime:#76ff03;
     --text:#f4f6ff;--muted:#9aa3c7;
     --border:rgba(122,240,255,.18);
     --card:linear-gradient(180deg,rgba(255,255,255,.04) 0%,rgba(255,255,255,.01) 100%);
@@ -38,7 +38,7 @@
     background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;
     background-image:
       radial-gradient(900px 600px at 80% -10%,rgba(0,229,255,.18),transparent 60%),
-      radial-gradient(700px 500px at 0% 30%,rgba(255,0,170,.10),transparent 60%),
+      radial-gradient(720px 520px at 0% 32%,rgba(255,122,26,.11),transparent 60%),
       radial-gradient(800px 600px at 50% 110%,rgba(255,193,7,.08),transparent 70%);
     background-attachment:fixed;-webkit-font-smoothing:antialiased;
   }
@@ -46,7 +46,7 @@
   a:hover{color:var(--cyan-soft)}
   .container{max-width:1080px;margin:0 auto;padding:0 24px}
 
-  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,15,46,.7);border-bottom:1px solid transparent;transition:border-color .3s}
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(8,8,8,.72);border-bottom:1px solid transparent;transition:border-color .3s}
   header.scrolled{border-bottom-color:var(--border)}
   nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:14px}
   nav .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.5px;font-size:18px;display:flex;align-items:center;gap:8px}
@@ -122,7 +122,7 @@
   footer .copy{font-size:13px}
 
   @media (max-width:720px){
-    nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(10,15,46,.96);backdrop-filter:blur(12px);padding:24px;gap:18px;border-top:1px solid var(--border)}
+    nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(8,8,8,.96);backdrop-filter:blur(12px);padding:24px;gap:18px;border-top:1px solid var(--border)}
     nav ul.open{display:flex}
     nav .menu-btn{display:block}
     section{padding:52px 0}
@@ -162,9 +162,9 @@
         <span class="icon">▶</span>
         <span><small>Get it on</small><strong>Google Play</strong></span>
       </a>
-      <a class="btn-store soon" href="#" aria-disabled="true">
+      <a class="btn-store live" href="https://apps.apple.com/app/id6787549854" target="_blank" rel="noopener">
         <span class="icon">🍎</span>
-        <span><small>Coming soon to</small><strong>App Store</strong></span>
+        <span><small>Download on the</small><strong>App Store</strong></span>
       </a>
     </div>
   </section>
