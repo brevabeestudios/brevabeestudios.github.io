@@ -149,11 +149,10 @@
   .shots-strip{display:flex;gap:18px;overflow-x:auto;padding:8px 4px 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
   .shots-strip::-webkit-scrollbar{height:8px}
   .shots-strip::-webkit-scrollbar-thumb{background:rgba(0,229,255,.25);border-radius:4px}
-  .shot{flex:0 0 220px;height:440px;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#1a2150 0%,#0a0f2e 100%);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);font-size:13px;text-align:center;padding:24px;scroll-snap-align:center;position:relative;transition:transform .25s,border-color .25s}
-  .shot:hover{transform:translateY(-3px);border-color:var(--cyan)}
-  .shot::after{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:64px;height:6px;background:rgba(255,255,255,.08);border-radius:3px}
-  .shot .placeholder-icon{font-size:42px;margin-bottom:12px;opacity:.4}
-  .shot strong{color:var(--text);display:block;margin-bottom:4px}
+  .shot{flex:0 0 220px;margin:0;border-radius:24px;overflow:hidden;background:#05070f;border:1px solid var(--border);scroll-snap-align:center;position:relative;transition:transform .25s,border-color .25s,box-shadow .25s}
+  .shot:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 10px 34px rgba(0,229,255,.18)}
+  .shot img{display:block;width:100%;height:auto;aspect-ratio:1284/2778;object-fit:cover}
+  .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 14px 12px;font-size:12.5px;font-weight:600;color:var(--text);background:linear-gradient(transparent,rgba(0,0,0,.82))}
 
   /* HOW TO PLAY */
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;text-align:center}
@@ -203,7 +202,7 @@
     .ring{width:200px;height:200px}
     .ring-inner{width:152px;height:152px}
     .bolt{width:74px}
-    .shot{flex:0 0 180px;height:360px}
+    .shot{flex:0 0 180px}
   }
 </style>
 </head>
@@ -273,12 +272,15 @@
       <h2>Screenshots</h2>
       <p class="sub">A peek at the title screen, gameplay, and results — neon palette evolves as you progress.</p>
       <div class="shots-strip">
-        <div class="shot"><div class="placeholder-icon">📱</div><strong>Title screen</strong><span>Animated dashed ring</span></div>
-        <div class="shot"><div class="placeholder-icon">🧩</div><strong>Level 14</strong><span>Bolt + houses puzzle</span></div>
-        <div class="shot"><div class="placeholder-icon">⚡</div><strong>Power-ups</strong><span>Clear Box & 4-Way</span></div>
-        <div class="shot"><div class="placeholder-icon">⏱️</div><strong>Time-up</strong><span>Continue with gems or ad</span></div>
-        <div class="shot"><div class="placeholder-icon">🏆</div><strong>Results</strong><span>Stars, score, gems</span></div>
-        <div class="shot"><div class="placeholder-icon">🎨</div><strong>Tier palette</strong><span>Color shifts every 15 levels</span></div>
+        <figure class="shot"><img src="screenshots/01-title.jpg" loading="lazy" alt="Bolt to Home title screen — Touch to Start"><figcaption>Touch to start</figcaption></figure>
+        <figure class="shot"><img src="screenshots/02-gameplay.jpg" loading="lazy" alt="Gameplay — connect the glowing path to the home"><figcaption>Connect the path</figcaption></figure>
+        <figure class="shot"><img src="screenshots/03-solved.jpg" loading="lazy" alt="A solved circuit lighting up in neon"><figcaption>Light it up</figcaption></figure>
+        <figure class="shot"><img src="screenshots/04-levels.jpg" loading="lazy" alt="Level select — 200 hand-crafted levels"><figcaption>200 levels</figcaption></figure>
+        <figure class="shot"><img src="screenshots/05-missions.jpg" loading="lazy" alt="Daily missions and rewards"><figcaption>Daily missions</figcaption></figure>
+        <figure class="shot"><img src="screenshots/06-obstacles.jpg" loading="lazy" alt="Multiple homes and blocked tiles"><figcaption>Multiple homes</figcaption></figure>
+        <figure class="shot"><img src="screenshots/07-advanced.jpg" loading="lazy" alt="Advanced multi-source puzzle"><figcaption>Tougher boards</figcaption></figure>
+        <figure class="shot"><img src="screenshots/08-twin.jpg" loading="lazy" alt="Twin-source challenge board"><figcaption>Twin sources</figcaption></figure>
+        <figure class="shot"><img src="screenshots/09-rewards.jpg" loading="lazy" alt="Daily login reward streak"><figcaption>Daily rewards</figcaption></figure>
       </div>
     </div>
   </section>
@@ -348,11 +350,11 @@
   <section id="download">
     <div class="container" style="text-align:center">
       <h2>Get the game</h2>
-      <p class="sub">Bolt to Home is in final pre-launch testing. Tap a store below — we'll wire the real link the moment the app passes review.</p>
+      <p class="sub">Bolt to Home is out now on Google Play. iOS is coming soon to the App Store.</p>
       <div class="download-stack">
-        <a class="btn-store" href="#" aria-disabled="true" style="opacity:.6;cursor:default">
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.bbs.bth" target="_blank" rel="noopener" style="border-color:rgba(0,229,255,.5);box-shadow:0 0 22px rgba(0,229,255,.15)">
           <span class="icon">▶</span>
-          <span><small>Coming soon to</small><strong>Google Play</strong></span>
+          <span><small>Get it on</small><strong>Google Play</strong></span>
         </a>
         <a class="btn-store" href="#" aria-disabled="true" style="opacity:.6;cursor:default">
           <span class="icon">🍎</span>
